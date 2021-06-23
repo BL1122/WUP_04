@@ -60,7 +60,7 @@ It looks like the box with LT High school is different from the box of Junior co
 favstats(WORDSUM~DEGREE,data=gssdata)
 ```
 
-Based on the table Bachelor, Graduate, and Junior College have similiar average scores on Wordsum. While the average of High school and LT High schol is lower. Therefore it would appear that there is a significant difference between at least two levels of degree. 
+Based on the table Bachelor, Graduate, and Junior College have similar average scores on Wordsum. While the average of High school and LT High school is lower. Therefore it would appear that there is a significant difference between at least two levels of degree. 
 
 ## Inferential Results
 
@@ -71,7 +71,7 @@ model1 <- aov(WORDSUM~DEGREE,data=gssdata)
 summary.aov(model1)
 ```
 
-
+This table does not provide info information to make a conclusion therefore, we will need to run a TukeyHSD plot. 
 
 ```{r}
 #we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
@@ -85,4 +85,4 @@ plot(TukeyHSD(model1),las=2)
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-There is a difference between LT High school and graduate as well as a difference between high school and graduate, Both of these do not run into the zero line. The other categories that would be outside of the . We see that there is a significant difference between two levels. 
+This was a numerical~cat problem so used the num-cat helper file. After running the first ggboxplot there seemed to be a slight difference between LT high school and Junior college and LT high school and graduate. After running the TukeyHSD plot, I can see there is a difference between LT High school and graduate as well as a difference between high school and graduate, Both of these do not run into the zero line. The other categories run through the zero line. We see that there is a significant difference between two levels. 
